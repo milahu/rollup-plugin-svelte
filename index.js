@@ -208,7 +208,7 @@ module.exports = function (options = {}) {
 				// fix subcomponent init calls
 				sub_components.forEach(sc => {
 					compiled.js.code = compiled.js.code.replace(
-						new RegExp(`( = new )(${sc.sub_name}\\({ )`, 'g'), // TODO avoid false matches (code vs data)
+						new RegExp(`( = new )(${sc.sub_name}\\({)`, 'g'), // TODO avoid false matches (code vs data)
 						`$1${parent_name}.$2`
 					);
 				});
